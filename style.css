@@ -171,13 +171,53 @@ p, h1, h2, h3, h4, h5, h6 {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 20px;
+  padding: 0;
   margin-bottom: 100px;
+  list-style-type: none;
  }
 
  .creations_content_items {
   position: relative;
   grid-column: span 3 / span 3;
+  height: 450px;
  }
+
+ .creations_content_items:hover {
+  color: aqua;
+ }
+
+ .creations_content_items:nth-child(-n + 1) {
+  background-image: url(/images/desktop/image-deep-earth.jpg);
+ }
+
+ .creations_content_items:nth-child(2) {
+  background-image: url(/images/desktop/image-night-arcade.jpg);
+ }
+
+ .creations_content_items:nth-child(3) {
+  background-image: url(/images/desktop/image-soccer-team.jpg);
+ }
+
+ .creations_content_items:nth-child(4) {
+  background-image: url(/images/desktop/image-grid.jpg);
+ }
+
+ .creations_content_items:nth-child(5) {
+  background-image: url(/images/desktop/image-from-above.jpg);
+ }
+
+ .creations_content_items:nth-child(6) {
+  background-image: url(/images/desktop/image-pocket-borealis.jpg);
+ }
+ 
+ .creations_content_items:nth-child(7) {
+  background-image: url(/images/desktop/image-curiosity.jpg);
+ }
+
+ .creations_content_items:nth-child(8) {
+  background-image: url(/images/desktop/image-fisheye.jpg);
+ }
+ 
 
  .creations_content_items .creation_title {
   text-transform: uppercase;
@@ -192,20 +232,6 @@ p, h1, h2, h3, h4, h5, h6 {
   bottom: 40px;
   left: 40px;
  }
-
- .creations_content_items img {
-  display: block;
-  width: 100%;
-  object-fit: auto;
-  background-color: var(--black);
- }
-
- .creations_content_items img:hover {
-  opacity: 50%;
-  transition-duration: 300ms;
-  cursor: pointer;
- }
-
 
  .creations_content_items img:hover + .creation_title {
   color: var(--black);
@@ -268,6 +294,135 @@ p, h1, h2, h3, h4, h5, h6 {
   color: var(--very-dark-gray);
   font-family: "Josefin Sans", sans-serif;
  }
+
+
+ .left-entry {
+  animation: left-entry 1s ease forwards;
+  animation-timeline: view();
+  animation-range: cover 0% cover 30%;
+ }
+
+
+@keyframes left-entry {
+  from {
+    opacity: 0;
+    translate: -100vw 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .section_header {
+    height: 100vh;
+  }
+
+  .header_nav {
+    padding: 20px
+  }
+
+  .header_nav ul {
+    display: none;
+  }
+
+  .header_title {
+    padding: 0 20px;
+    display: grid;
+    place-content: center;
+    height: 100%;
+  }
+  
+  .header_title ul {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    list-style-type: none;
+    border: 2px solid white;
+    width: 100%;
+  }
+
+  .header_title li {
+    color: var(--white);
+    font-size: 40px;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    line-height: 32px;
+   }
+
+   .vr_section {
+    padding: 40px 0;
+   }
+
+  .vr_section_grid {
+    display: grid;
+    position: initial;
+    grid-template-columns: 1fr
+   }
+  
+   .vr_section_image {
+    grid-column: 1;
+   }
+  
+   .vr_section_image img {
+    display: block;
+    width: 100%;
+    padding: 20px;
+   }
+  
+   .vr_section_text {
+    background-color: var(--white);
+    padding: 20px;
+    position: initial;
+    bottom: 0;
+    grid-column: 1;
+    text-align: center;
+   }
+
+   .creations_content {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    margin-bottom: 100px;
+    list-style-type: none;
+   }
+  
+   .creations_content_items {
+    position: relative;
+    height: 100px;
+   }
+
+   .creations_content_items .creation_title {
+    text-transform: uppercase;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 300;
+    color: var(--white);
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5);
+    position: absolute;
+    z-index: 99;
+    bottom: 40px;
+    left: 40px;
+   }
+
+   .creations_content_items:nth-child(-n + 1) {
+    background-image: url(/images/mobile/image-deep-earth.jpg);
+   }
+
+   .creations_content_items:nth-child(2) {
+    background-image: url(/images/mobile/image-night-arcade.jpg);
+   }
+
+   .creations_content_items:nth-child(3) {
+    background-image: url(/images/mobile/image-soccer-team.jpg);
+   }
+
+}
 
  
  
